@@ -8,10 +8,11 @@ public class SpringCoreApplication {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context =
                 new AnnotationConfigApplicationContext("sorokin.dev");
-        Task mainTask = (Task) context.getBean("main-task");
-//        Task notMainTask = (Task) context.getBean("not-main-task");
-//        System.out.println(task1);
-//        System.out.println(task);
+        Task task1 = context.getBean(Task.class);
+        Task task2 = context.getBean(Task.class);
+
+        System.out.println(task1 ==task2);
+
         TaskManager taskManager = context.getBean(TaskManager.class);
         taskManager.printTask();
     }
