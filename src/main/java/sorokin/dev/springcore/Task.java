@@ -1,15 +1,16 @@
 package sorokin.dev.springcore;
 
-import org.springframework.stereotype.Component;
 
-@Component("main-task")
+//@Component("main-task")
 public class Task {
     private final String name;
     private final Long duration;
+    private TaskManager taskManager;
 
-    public Task() {
-        this.name = "task";
+    public Task(TaskManager taskManager) {
+        this.name = "main-task";
         this.duration = 60L;
+        this.taskManager = taskManager;
     }
 
     @Override

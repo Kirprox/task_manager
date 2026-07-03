@@ -1,9 +1,8 @@
 package sorokin.dev.springcore;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class TaskManager {
     private final Task task;
 
@@ -13,6 +12,10 @@ public class TaskManager {
     }
 
     public void printTask() {
-        System.out.println("Current task: " + task.toString());
+        if (task == null) {
+            System.out.println("no current task");
+        } else {
+            System.out.println("Current task: " + task.toString());
+        }
     }
 }
