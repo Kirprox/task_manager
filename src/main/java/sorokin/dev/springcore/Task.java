@@ -3,6 +3,7 @@ package sorokin.dev.springcore;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component("main-task")
@@ -12,9 +13,12 @@ public class Task {
     private final Long duration;
 
 
-    public Task() {
-        this.name = "main-task";
-        this.duration = 60L;
+    public Task(
+            @Value("${task.name}") String name,
+            @Value("${task.duration}") Long duration
+    ) {
+        this.name = name;
+        this.duration = duration;
         System.out.println("call task constuctor");
     }
 

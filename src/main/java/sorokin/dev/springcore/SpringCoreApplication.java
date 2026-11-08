@@ -12,14 +12,14 @@ public class SpringCoreApplication {
         Task task2 = context.getBean(Task.class);
         System.out.println(task1 == task2);
 
-        TaskManager taskManager = (TaskManager) context.getBean(TaskManager.class);
-        taskManager.printTask();
-        TaskManager taskManager2 = (TaskManager) context.getBean(TaskManager.class);
-        taskManager2.printTask();
-
-
-        TaskExecutor executor = (TaskExecutor) context.getBean(TaskExecutor.class);
-        executor.printTask();
+//        TaskManager taskManager = (TaskManager) context.getBean(TaskManager.class);
+//        taskManager.printTask();
+//        TaskManager taskManager2 = (TaskManager) context.getBean(TaskManager.class);
+//        taskManager2.printTask();
+//        TaskExecutor executor = TaskExecutor) context.getBean(TaskExecutor.class);
+//        executor.printTask();
+        var properties = context.getBean(TaskProperties.class);
+        System.out.println(properties.toString());
 
         context.close();
     }
