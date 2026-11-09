@@ -8,18 +8,23 @@ public class SpringCoreApplication {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context =
                 new AnnotationConfigApplicationContext("sorokin.dev");
-        Task task1 = context.getBean(Task.class);
-        Task task2 = context.getBean(Task.class);
-        System.out.println(task1 == task2);
+//        Task task1 = context.getBean(Task.class);
+//        Task task2 = context.getBean(Task.class);
+//        System.out.println(task1 == task2);
 
-//        TaskManager taskManager = (TaskManager) context.getBean(TaskManager.class);
-//        taskManager.printTask();
+        TaskManager taskManager = (TaskManager) context.getBean(TaskManager.class);
+        var result = taskManager.printTask();
+        System.out.println(result);
+
+//        TaskSupreme taskSupreme = (TaskSupreme) context.getBean(TaskSupreme.class);
+//        taskSupreme.returnSupreme();
+
 //        TaskManager taskManager2 = (TaskManager) context.getBean(TaskManager.class);
 //        taskManager2.printTask();
-//        TaskExecutor executor = TaskExecutor) context.getBean(TaskExecutor.class);
-//        executor.printTask();
-        var properties = context.getBean(TaskProperties.class);
-        System.out.println(properties.toString());
+        TaskExecutor executor = (TaskExecutor) context.getBean(TaskExecutor.class);
+        executor.printTaskExecutor();
+//        var properties = context.getBean(TaskProperties.class);
+//        System.out.println(properties.toString());
 
         context.close();
     }

@@ -19,18 +19,18 @@ public class Task {
     ) {
         this.name = name;
         this.duration = duration;
-        System.out.println("call task constuctor");
+//        System.out.println("call task constuctor");
     }
 
-    @PostConstruct
-    public void postConstruct() {
-        System.out.println("task postconstruct");
-    }
-
-    @PreDestroy
-    public void preDestroy() {
-        System.out.println("task pre destroy");
-    }
+//    @PostConstruct
+//    public void postConstruct() {
+//        System.out.println("task postconstruct");
+//    }
+//
+//    @PreDestroy
+//    public void preDestroy() {
+//        System.out.println("task pre destroy");
+//    }
 
 
 //    @Autowired
